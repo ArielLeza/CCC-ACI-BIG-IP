@@ -2,10 +2,23 @@
   hosts: localhost
   connection: local
   gather_facts: false
-
+ 
+  vars_files:
+   - varaible.yaml
+  
   tasks:
-
-  - name: Execute POSTS (Contract, Export LDEV, Service Graph Template, Graph values, Device selection policy , Apply graph)
+  - name: Create XML template for contract
+    template: src=contract.j2 dest=contract.xml
+  - name: Create XML template for create_unmanaged_ve_ldev
+    template: src=create_unmanaged_ve_ldev.j2 dest=create_unmanaged_ve_ldev.xml
+  - name: Create XML template for service_graph_template
+    template: src=service_graph_template.j2 dest=service_graph_template.xml
+  - name: Create XML template for deviceSelectionPolicy
+    template: src=deviceSelectionPolicy.j2 dest=deviceSelectionPolicy.xml
+  - name: Create XML template for apply_graph
+    template: src=apply_graph.j2 dest=apply_graph.xml
+ 
+  - name: Execute POSTS (Contract, Create LDEV, Service Graph Template, Graph values, Device selection policy , Apply graph)
     aci_rest:
       action: "post"
       uri: "/api/node/mo/uni/tn-CCC-Demo.xml"
@@ -16,8 +29,9 @@
       validate_certs: "false"
     with_items:
      - "contract.xml"
+     - "create_unmanaged_ve_ldev.xml"
      #- "aci_posts/export_from_tenant.xml"
-     #- "aci_posts/service_graph_template.xml"
+     - "aci_posts/service_graph_template.xml"
      #- "aci_posts/graph_values.xml"
-     #- "aci_posts/deviceSelectionPolicy.xml"
-     #- "aci_posts/apply_graph.xml"
+     - "aci_posts/deviceSelectionPolicy.xml"
+     - "aci_posts/apply_graph.xml"

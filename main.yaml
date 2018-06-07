@@ -8,7 +8,7 @@
 
   tasks:
 
-  - include_tasks: ../common/onboarding.yaml 
+  - include_tasks: onboarding.yaml 
     when: '"yes" in onboarding '
 
   - name: Add VLAN(s)
