@@ -7,6 +7,18 @@
     - variable.yaml
 
   tasks:
+
+  - name: Delete route(s)
+    bigip_static_route:
+      server: "{{bigip_ip}}"
+      user: "{{ bigip_username }}"
+      password: "{{ bigip_password }}"
+      name: "{{item.name}}"
+      state: absent
+      validate_certs: "no"
+    with_items: "{{static_route}}"
+    delegate_to: localhost
+
   - name: Delete SELF-IP(s)
     bigip_selfip: 
      server: "{{bigip_ip}}"
@@ -26,14 +38,3 @@
       state: absent
       validate_certs: "no"
     with_items: "{{vlan_information}}"
-
-  - name: Add route(s)
-    bigip_static_route:
-      server: "{{bigip_ip}}"
-      user: "{{ bigip_username }}"
-      password: "{{ bigip_password }}"
-      name: "{{item.name}}"
-      state: absent
-      validate_certs: "no"
-    with_items: "{{static_route}}"
-    delegate_to: localhost
