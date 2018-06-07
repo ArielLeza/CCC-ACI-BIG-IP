@@ -8,17 +8,17 @@
   
   tasks:
   
-  - name: Get iApp from Github
-    get_url:
-      url: "https://raw.githubusercontent.com/f5vng/CCC-ACI-BIG-IP/master/{{item}}"
-      dest: /var/tmp
-    with_items:
-     - contract.j2
-     - attach_cons_prov_contract.j2
-     - create_unmanaged_ve_ldev.j2
-     - service_graph_template.j2
-     - deviceSelectionPolicy.j2
-     - apply_graph.j2
+  #- name: Get iApp from Github
+  #  get_url:
+  #    url: "https://raw.githubusercontent.com/f5vng/CCC-ACI-BIG-IP/master/{{item}}"
+  #    dest: /var/tmp
+  #  with_items:
+  #   - contract.j2
+  #   - attach_cons_prov_contract.j2
+  #   - create_unmanaged_ve_ldev.j2
+  #   - service_graph_template.j2
+  #   - deviceSelectionPolicy.j2
+  #   - apply_graph.j2
 
   - name: Create XML template for contract
     template: src=contract.j2 dest=contract.xml
