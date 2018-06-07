@@ -9,6 +9,8 @@
   tasks:
   - name: Create XML template for contract
     template: src=contract.j2 dest=contract.xml
+  - name: Create XML template for attach_cons_prov_contract
+    template: src=attach_cons_prov_contract.j2 dest=attach_cons_prov_contract.xml
   - name: Create XML template for create_unmanaged_ve_ldev
     template: src=create_unmanaged_ve_ldev.j2 dest=create_unmanaged_ve_ldev.xml
   - name: Create XML template for service_graph_template
@@ -29,6 +31,7 @@
       validate_certs: "false"
     with_items:
      - "contract.xml"
+     - "attach_cons_prov_contract.xml"
      - "create_unmanaged_ve_ldev.xml"
      #- "aci_posts/export_from_tenant.xml"
      - "aci_posts/service_graph_template.xml"
