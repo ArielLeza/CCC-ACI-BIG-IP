@@ -7,18 +7,18 @@
    - varaible.yaml
   
   tasks:
-  - name: Create XML template for contract
-    template: src=contract.j2 dest=contract.xml
-  - name: Create XML template for attach_cons_prov_contract
-    template: src=attach_cons_prov_contract.j2 dest=attach_cons_prov_contract.xml
-  - name: Create XML template for create_unmanaged_ve_ldev
-    template: src=create_unmanaged_ve_ldev.j2 dest=create_unmanaged_ve_ldev.xml
-  - name: Create XML template for service_graph_template
-    template: src=service_graph_template.j2 dest=service_graph_template.xml
-  - name: Create XML template for deviceSelectionPolicy
-    template: src=deviceSelectionPolicy.j2 dest=deviceSelectionPolicy.xml
-  - name: Create XML template for apply_graph
-    template: src=apply_graph.j2 dest=apply_graph.xml
+  #- name: Create XML template for contract
+  #  template: src=contract.j2 dest=contract.xml
+  #- name: Create XML template for attach_cons_prov_contract
+  #  template: src=attach_cons_prov_contract.j2 dest=attach_cons_prov_contract.xml
+  #- name: Create XML template for create_unmanaged_ve_ldev
+  #  template: src=create_unmanaged_ve_ldev.j2 dest=create_unmanaged_ve_ldev.xml
+  #- name: Create XML template for service_graph_template
+  #  template: src=service_graph_template.j2 dest=service_graph_template.xml
+  #- name: Create XML template for deviceSelectionPolicy
+  #  template: src=deviceSelectionPolicy.j2 dest=deviceSelectionPolicy.xml
+  #- name: Create XML template for apply_graph
+  #  template: src=apply_graph.j2 dest=apply_graph.xml
  
   - name: Execute POSTS (Contract, Create LDEV, Service Graph Template, Graph values, Device selection policy , Apply graph)
     aci_rest:
@@ -30,9 +30,9 @@
       password: cisco123
       validate_certs: "false"
     with_items:
-     - "contract.xml"
-     - "attach_cons_prov_contract.xml"
-     - "create_unmanaged_ve_ldev.xml"
-     - "service_graph_template.xml"
-     - "deviceSelectionPolicy.xml"
-     - "apply_graph.xml"
+     - "contract.j2"
+     - "attach_cons_prov_contract.j2"
+     - "create_unmanaged_ve_ldev.j2"
+     - "service_graph_template.j2"
+     - "deviceSelectionPolicy.j2"
+     - "apply_graph.j2"
