@@ -4,9 +4,9 @@ tenant_name: "CCC-Demo"
 consumerBD_name: "ExternalBD"
 providerBD_name: "InternalBD"
 
-appProfile_name: "Opencart"
-consumerEPG_name: "Opencart-Ext"
-providerEPG_name: "Opencart-Int"
+appProfile_name: "CCC-WEB"
+consumerEPG_name: "CCC-WEB-Ext"
+providerEPG_name: "CCC-WEB-Int"
 
 logicalDeviceCluster_name: "CCC-BIG-IP-VE"
 vmm_domain_name: "vcenter"
