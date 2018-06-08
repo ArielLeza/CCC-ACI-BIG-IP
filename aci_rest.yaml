@@ -32,8 +32,8 @@
       validate_certs: "false"
     with_items:
      - "contract.xml"
-     - "attach_cons_prov_contract.xml"
-     - "create_unmanaged_ve_ldev.xml"
-     - "service_graph_template.xml"
-     - "deviceSelectionPolicy.xml"
-     - "apply_graph.xml"
+     #- "attach_cons_prov_contract.xml"
+     #- "create_unmanaged_ve_ldev.xml"
+     #- "service_graph_template.xml"
+     #- "deviceSelectionPolicy.xml"
+     #- "apply_graph.xml"

@@ -1,11 +1,13 @@
-<vnsLDevCtx nodeNameOrLbl="N1" name="" graphNameOrLbl="{{SGtemplate_name}}" dn="uni/tn-{{tenant_name}}/ldevCtx-c-{{contract_name}}-g-{{SGtemplate_name}}-n-N1" descr="" ctrctNameOrLbl="{{contract_name}}">
-   <vnsRsLDevCtxToLDev tDn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}" />
-   <vnsLIfCtx name="" descr="" permitLog="no" connNameOrLbl="provider">
-      <vnsRsLIfCtxToBD tDn="uni/tn-{{tenant_name}}/BD-{{providerBD_name}}" />
-      <vnsRsLIfCtxToLIf tDn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}/lIf-Internal" />
+<vnsLDevCtx annotation="" context="" ctrctNameOrLbl="{{contract_name}}" descr="" dn="uni/tn-{{tenant_name}}/ldevCtx-c-{{contract_name}}-g-{{SGtemplate_name}}-n-N1" graphNameOrLbl="{{SGtemplate_name}}" name="" nameAlias="" nodeNameOrLbl="N1">
+   <vnsRsLDevCtxToLDev annotation="" tDn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}" />
+   <vnsLIfCtx annotation="" connNameOrLbl="provider" descr="" l3Dest="yes" name="" nameAlias="" permitLog="no">
+      <vnsRsLIfCtxToLIf annotation="" tDn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}/lIf-Internal" />
+      <vnsRsLIfCtxToCustQosPol annotation="" tnQosCustomPolName="" />
+      <vnsRsLIfCtxToBD annotation="" tDn="uni/tn-{{tenant_name}}/BD-{{providerBD_name}}" />
    </vnsLIfCtx>
-   <vnsLIfCtx name="" descr="" permitLog="no" connNameOrLbl="consumer">
-      <vnsRsLIfCtxToBD tDn="uni/tn-{{tenant_name}}/BD-{{consumerBD_name}}" />
-      <vnsRsLIfCtxToLIf tDn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}/lIf-External" />
+   <vnsLIfCtx annotation="" connNameOrLbl="consumer" descr="" l3Dest="yes" name="" nameAlias="" permitLog="no">
+      <vnsRsLIfCtxToLIf annotation="" tDn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}/lIf-External" />
+      <vnsRsLIfCtxToCustQosPol annotation="" tnQosCustomPolName="" />
+      <vnsRsLIfCtxToBD annotation="" tDn="uni/tn-{{tenant_name}}/BD-{{consumerBD_name}}" />
    </vnsLIfCtx>
 </vnsLDevCtx>

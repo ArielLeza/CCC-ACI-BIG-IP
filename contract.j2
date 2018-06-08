@@ -1,7 +1,5 @@
-<fvTenant dn="uni/tn-{{tenant_name}}" name="{{tenant_name}}">
-    <vzBrCP ownerTag="" ownerKey="" name="{{contract_name}}" descr="" scope="context" prio="unspecified">
-        <vzSubj name="http" descr="" prio="unspecified" revFltPorts="yes" provMatchT="AtleastOne" consMatchT="AtleastOne">
-            <vzRsSubjFiltAtt tnVzFilterName="default"/>
-        </vzSubj>
-    </vzBrCP>
-</fvTenant>
+<vzBrCP annotation="" descr="" dn="uni/tn-{{tenant_name}}/brc-{{contract_name}}" name="{{contract_name}}" nameAlias="" ownerKey="" ownerTag="" prio="unspecified" scope="context" targetDscp="unspecified">
+   <vzSubj annotation="" consMatchT="AtleastOne" descr="" name="http" nameAlias="" prio="unspecified" provMatchT="AtleastOne" revFltPorts="yes" targetDscp="unspecified">
+      <vzRsSubjFiltAtt action="permit" annotation="" directives="" priorityOverride="default" tnVzFilterName="default" />
+   </vzSubj>
+</vzBrCP>
