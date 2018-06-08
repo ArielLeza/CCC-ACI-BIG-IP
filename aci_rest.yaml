@@ -21,7 +21,7 @@
   - name: Create XML template for apply_graph
     template: src=apply_graph.j2 dest=apply_graph.xml
  
-  - name: Execute POSTS (Contract, Create LDEV, Service Graph Template, Graph values, Device selection policy , Apply graph)
+  - name: Execute POSTS (Contract, Apply Contract to EPG, Create LDEV, Service Graph Template, Device selection policy , Apply graph)
     aci_rest:
       action: "post"
       uri: "/api/node/mo/uni/tn-CCC-Demo.xml"
@@ -31,9 +31,9 @@
       password: cisco123
       validate_certs: "false"
     with_items:
-     #- "contract.xml"
-     #- "attach_cons_prov_contract.xml"
-     #- "create_unmanaged_ve_ldev.xml"
-     #- "service_graph_template.xml"
-     #- "deviceSelectionPolicy.xml"
+     - "contract.xml"
+     - "attach_cons_prov_contract.xml"
+     - "create_unmanaged_ve_ldev.xml"
+     - "service_graph_template.xml"
+     - "deviceSelectionPolicy.xml"
      - "apply_graph.xml"

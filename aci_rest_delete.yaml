@@ -21,7 +21,7 @@
   - name: Create XML template for apply_graph
     template: src=apply_graph.j2 dest=apply_graph.xml
  
-  - name: Execute DELETE (Contract, Create LDEV, Service Graph Template, Graph values, Device selection policy , Apply graph)
+  - name: Execute DELETE (Contract, Apply Contract to EPG, Create LDEV, Service Graph Template, Device selection policy , Apply graph)
     aci_rest:
       action: "delete"
       #uri: "/api/node/mo/uni/tn-{{tenant_name}}.xml"
@@ -33,8 +33,8 @@
       validate_certs: "false"
     with_items:
      - "contract.xml"
-     #- "attach_cons_prov_contract.xml"
-     #- "create_unmanaged_ve_ldev.xml"
-     #- "service_graph_template.xml"
-     #- "deviceSelectionPolicy.xml"
-     #- "apply_graph.xml"
+     - "attach_cons_prov_contract.xml"
+     - "create_unmanaged_ve_ldev.xml"
+     - "service_graph_template.xml"
+     - "deviceSelectionPolicy.xml"
+     - "apply_graph.xml"
