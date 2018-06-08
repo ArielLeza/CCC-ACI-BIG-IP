@@ -24,7 +24,8 @@
   - name: Execute DELETE (Contract, Create LDEV, Service Graph Template, Graph values, Device selection policy , Apply graph)
     aci_rest:
       action: "delete"
-      #uri: "/api/node/mo/uni/tn-CCC-Demo.xml"
+      #uri: "/api/node/mo/uni/tn-{{tenant_name}}.xml"
+      path: "/api/node/mo/uni/tn-{{tenant_name}}.xml"
       config_file: "{{ item }}"
       host: 10.192.73.30
       username: admin
