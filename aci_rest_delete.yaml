@@ -21,7 +21,7 @@
   - name: Create XML template for apply_graph
     template: src=apply_graph.j2 dest=apply_graph.xml
  
-  - name: Execute POSTS (Contract, Create LDEV, Service Graph Template, Graph values, Device selection policy , Apply graph)
+  - name: Execute DELETE (Contract, Create LDEV, Service Graph Template, Graph values, Device selection policy , Apply graph)
     aci_rest:
       action: "delete"
       uri: "/api/node/mo/uni/tn-CCC-Demo.xml"
