@@ -8,7 +8,6 @@
   
   tasks:
 
-# vng
   - name: Create XML template to delete contract
     template: src=delete_contract.j2 dest=delete_contract.xml
   #- name: Create XML template for delete_unmanaged_ve_ldev
