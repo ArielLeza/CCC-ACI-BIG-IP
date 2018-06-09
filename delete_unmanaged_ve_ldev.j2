@@ -1,0 +1,15 @@
+<vnsLDevVip annotation="" contextAware="single-Context" devtype="VIRTUAL" dn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}" funcType="GoTo" isCopy="no" managed="no" mode="legacy-Mode" name="{{logicalDeviceCluster_name}}" nameAlias="" packageModel="" promMode="no" svcType="ADC" trunking="no">
+   <vnsRsALDevToDomP annotation="" switchingMode="native" tDn="uni/vmmp-VMware/dom-{{vmm_domain_name}}" />
+   <vnsLIf annotation="" encap="unknown" name="Internal" nameAlias="">
+      <vnsRsCIfAttN annotation="" tDn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}/cDev-Device1/cIf-[Internal]" />
+   </vnsLIf>
+   <vnsLIf annotation="" encap="unknown" name="External" nameAlias="">
+      <vnsRsCIfAttN annotation="" tDn="uni/tn-{{tenant_name}}/lDevVip-{{logicalDeviceCluster_name}}/cDev-Device1/cIf-[External]" />
+   </vnsLIf>
+   <vnsCDev annotation="" devCtxLbl="" name="Device1" nameAlias="" vcenterName="{{vmm_domain_name}}" vmName="{{vm_name}}">
+      <vnsCIf annotation="" name="Internal" nameAlias="" vnicName="{{ldev_int_interface_map_network_adaptor}}" />
+      <vnsCIf annotation="" name="External" nameAlias="" vnicName="{{ldev_ext_interface_map_network_adaptor}}" />
+      <vnsCCredSecret annotation="" name="password" nameAlias="" />
+      <vnsCCred annotation="" name="username" nameAlias="" value="a" />
+   </vnsCDev>
+</vnsLDevVip>
