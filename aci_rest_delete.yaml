@@ -10,6 +10,8 @@
 
   - name: Create XML template to delete contract
     template: src=delete_contract.j2 dest=delete_contract.xml
+  - name: Create XML template to detach contract
+    template: src=detach_contract.j2 dest=detach_contract.xml
   #- name: Create XML template for delete_unmanaged_ve_ldev
   #  template: src=delete_unmanaged_ve_ldev.j2 dest=delete_unmanaged_ve_ldev.xml
   #- name: Create XML template for delete_service_graph_template
@@ -30,6 +32,7 @@
       validate_certs: "false"
     with_items:
      - "delete_contract.xml"
+     - "detach_contact.xml"
      #- "attach_cons_prov_contract.xml"
      #- "delete_unmanaged_ve_ldev.xml"
      #- "delete_service_graph_template.xml"

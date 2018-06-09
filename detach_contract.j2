@@ -1,9 +1,3 @@
-<vzBrCP annotation="" descr="" dn="uni/tn-{{tenant_name}}/brc-{{contract_name}}" name="{{contract_name}}" nameAlias="" ownerKey="" ownerTag="" prio="unspecified" status="deleted" scope="context" targetDscp="unspecified">
-   <vzSubj annotation="" consMatchT="AtleastOne" descr="" name="http" nameAlias="" prio="unspecified" provMatchT="AtleastOne" revFltPorts="yes" targetDscp="unspecified">
-      <vzRsSubjFiltAtt action="permit" annotation="" directives="" priorityOverride="default" tnVzFilterName="default" />
-      <vzRsSubjGraphAtt annotation="" directives="" tnVnsAbsGraphName="{{SGtemplate_name}}"/>
-   </vzSubj>
-</vzBrCP>
 <fvAp annotation="" descr="" dn="uni/tn-{{tenant_name}}/ap-{{appProfile_name}}" name="{{appProfile_name}}" nameAlias="" ownerKey="" ownerTag="" prio="unspecified" status="deleted">
    <fvAEPg annotation="" descr="" exceptionTag="" floodOnEncap="disabled" fwdCtrl="" isAttrBasedEPg="no" matchT="AtleastOne" name="{{providerEPG_name}}" nameAlias="" pcEnfPref="unenforced" prefGrMemb="exclude" prio="unspecified">
       <fvRsProv annotation="" matchT="AtleastOne" prio="unspecified" tnVzBrCPName="{{contract_name}}" />
