@@ -11,14 +11,14 @@
   - name: Create XML template to delete contract
     template: src=delete_contract.j2 dest=delete_contract.xml
   - name: Create XML template to detach contract
-    template: src=detach_contract.j2 dest=detach_contract.xml
+    template: src=detach_contract.j2 dest=detach_contract.xml#
+  - name: Create XML template for delete_deviceSelectionPolicy
+    template: src=delete_deviceSelectionPolicy.j2 dest=delete_deviceSelectionPolicy.xml
   #- name: Create XML template for delete_unmanaged_ve_ldev
   #  template: src=delete_unmanaged_ve_ldev.j2 dest=delete_unmanaged_ve_ldev.xml
   #- name: Create XML template for delete_service_graph_template
   #  template: src=delete_service_graph_template.j2 dest=delete_service_graph_template.xml
-  #- name: Create XML template for deviceSelectionPolicy
-  #  template: src=deviceSelectionPolicy.j2 dest=deviceSelectionPolicy.xml
- 
+  
   - name: Execute DELETE (Contract, Apply Contract to EPG, Create LDEV, Service Graph Template, Device selection policy , Apply graph)
     aci_rest:
       action: "post"
@@ -33,8 +33,8 @@
     with_items:
      - "delete_contract.xml"
      - "detach_contract.xml"
+     - "delete_deviceSelectionPolicy.xml"
      #- "attach_cons_prov_contract.xml"
      #- "delete_unmanaged_ve_ldev.xml"
      #- "delete_service_graph_template.xml"
-     #- "deviceSelectionPolicy.xml"
      #- "apply_graph.xml"
